@@ -1,27 +1,129 @@
-# HippieDaily
+# Hippie Daily
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.0.
+A modern, responsive website inspired by Seedlip's clean design aesthetic. Built with Angular 15 and featuring a component-based architecture.
 
-## Development server
+## 🌐 Live Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Website:** [https://AlbertoFCasarrubias.github.io/hippie-daily/](https://AlbertoFCasarrubias.github.io/hippie-daily/)
 
-## Code scaffolding
+## ✨ Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Modern Design**: Clean, minimalist layout inspired by premium beverage brands
+- **Responsive**: Optimized for desktop, tablet, and mobile devices
+- **Component Architecture**: Organized with Angular components for maintainability
+- **Custom Typography**: Uses Puritan font for elegant typography
+- **Smooth Interactions**: Hover effects and transitions throughout
 
-## Build
+## 🏗️ Project Structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+src/app/
+├── components/          # Reusable components
+│   └── header/         # Header component
+├── pages/              # Page components
+│   └── home/          # Home page component
+├── app.component.*    # Root component
+└── app.module.ts      # App module
+```
 
-## Running unit tests
+## 🎨 Design Elements
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Header**: Fixed navigation with logo, menu, country selector, and cart
+- **Hero Section**: Large title with product showcase
+- **Product Range**: Grid layout for product display
+- **Newsletter**: Email signup with modern styling
+- **Footer**: Clean footer with essential links
 
-## Running end-to-end tests
+## 🚀 Development
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Prerequisites
 
-## Further help
+- Node.js (v16 or higher)
+- Angular CLI (`npm install -g @angular/cli`)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/AlbertoFCasarrubias/hippie-daily.git
+
+# Navigate to project directory
+cd hippie-daily
+
+# Install dependencies
+npm install
+
+# Start development server
+ng serve
+```
+
+The app will be available at `http://localhost:4200`
+
+## 📦 Build & Deploy
+
+### Development Build
+
+```bash
+ng build
+```
+
+### Production Build
+
+```bash
+ng build --configuration production
+```
+
+### Deploy to GitHub Pages
+
+```bash
+# Make the deploy script executable
+chmod +x deploy.sh
+
+# Run deployment
+./deploy.sh
+```
+
+Or manually:
+
+```bash
+ng build --configuration production --base-href "https://AlbertoFCasarrubias.github.io/hippie-daily/"
+npx angular-cli-ghpages --dir=dist/hippie-daily
+```
+
+## 🛠️ Technologies Used
+
+- **Framework**: Angular 15
+- **Styling**: SCSS
+- **Typography**: Puritan font (Google Fonts)
+- **Deployment**: GitHub Pages
+- **Build Tool**: Angular CLI
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🎯 Future Enhancements
+
+- [ ] Add routing for multiple pages
+- [ ] Implement shopping cart functionality
+- [ ] Add product detail pages
+- [ ] Integrate with a headless CMS
+- [ ] Add animations and micro-interactions
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+Built with ❤️ and Angular
