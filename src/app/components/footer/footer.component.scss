@@ -2,26 +2,34 @@
 .footer {
     background: #410f40;
     color: white;
-    padding: 2rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
   }
   
   .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;    
+    position: relative;
   }
   
   .footer-logo {
+    padding: 1rem;
     img {
         width: auto;
-        height: 100px;
+        height: calc(100px - 2rem);
     }
     
   }
   
   .footer-links {
-    display: flex;
-    gap: 2rem;
+    display: flex;    
+    justify-content: flex-end;    
+    width: calc(100% - 1rem);
+    gap: 1rem;
   }
   
   .footer-link {
@@ -35,7 +43,6 @@
   }
 
   .footer-social {
-    float: left;
     width: 100%;
     height: auto;
     display: flex;

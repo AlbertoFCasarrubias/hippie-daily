@@ -14,7 +14,8 @@ html, body {
   font-family: "Puritan", sans-serif;
 }
 
-body { 
-  margin: 0; 
-  font-family: "Puritan", sans-serif;
+.content {
+  width: 100%;
+  height: calc(100% - 160px);
+  margin-top: 60px;
 }
