@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify Angular CLI installation
+        run: npx ng version
+
+      - name: Make deploy script executable
+        run: chmod +x deploy.sh
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Run deploy script
+        run: ./deploy.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deployment Status
+        if: success()
+        run: echo "✅ Deployment successful! Site updated at https://AlbertoFCasarrubias.github.io/hippie-daily/"
+
+      - name: Deployment Failed
+        if: failure()
+        run: echo "❌ Deployment failed. Check the logs above for details."
