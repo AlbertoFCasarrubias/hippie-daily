@@ -5,7 +5,12 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    min-height: 100px;
+
+    @media (max-width: 768px) {
+      height: auto;
+      padding-bottom: 1rem;
+    }
   }
   
   .footer-content {
@@ -14,6 +19,13 @@
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;    
     position: relative;
+
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
   }
   
   .footer-logo {
@@ -30,6 +42,11 @@
     justify-content: flex-end;    
     width: calc(100% - 1rem);
     gap: 1rem;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    
+    }
   }
   
   .footer-link {

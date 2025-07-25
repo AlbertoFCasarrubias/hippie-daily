@@ -1,12 +1,37 @@
-<!-- Header Navigation -->
+
 <header class="header">
-    <div class="header-container">
-      <nav class="main-nav">
-        <ul class="nav-list">
-          <li><a [routerLink]="'products'" class="nav-link">Our Products</a></li>
-          <li><a [routerLink]="''"><img src="assets/images/hippie-daily-artisanals-text.png" alt="Hippie Daily Artisanals" class="logo"></a></li>
-          <li><a href="#story" class="nav-link">Our Story</a></li>
-        </ul>
-      </nav>
+  <div class="header-container">
+    <div class="logo-container">
+      <a [routerLink]="''">
+        <img src="assets/images/hippie-daily-artisanals-text.png" alt="Hippie Daily Artisanals" class="logo">
+      </a>
     </div>
-  </header>
+
+    <!-- Desktop Navigation -->
+    <nav class="main-nav desktop-nav">
+      <ul class="nav-list">
+        <li><a [routerLink]="'products'" (click)="onItemClick('products')" class="nav-link" [ngClass]="{'selected': selected === 'products'}">Our Products</a></li>
+        <li><a [routerLink]="'events'" (click)="onItemClick('events')" class="nav-link" [ngClass]="{'selected': selected === 'events'}">Events</a></li>
+        <li><a [routerLink]="''"><img src="assets/images/hippie-daily-artisanals-text.png" alt="Hippie Daily Artisanals" class="logo"></a></li>
+        <li></li>
+        <li><a href="#story" (click)="onItemClick('story')" class="nav-link" [ngClass]="{'selected': selected === 'story'}">Our Story</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-btn" (click)="toggleMobileMenu()" [ngClass]="{'active': isMobileMenuOpen}">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" [ngClass]="{'active': isMobileMenuOpen}">
+      <ul class="mobile-nav-list">
+        <li><a [routerLink]="'products'" (click)="onItemClick('products')" class="nav-link" [ngClass]="{'selected': selected === 'products'}">Our Products</a></li>
+        <li><a [routerLink]="'events'" (click)="onItemClick('events')" class="nav-link" [ngClass]="{'selected': selected === 'events'}">Events</a></li>
+        <li><a href="#story" (click)="onItemClick('story')" class="nav-link" [ngClass]="{'selected': selected === 'story'}">Our Story</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
